@@ -4,6 +4,15 @@ import "./App.css";
 import {store} from './store/store'
 
 class App extends Component {
+
+  state = {
+    name: 'David'
+  }
+
+  componentWillMount(){
+    console.log('will mount')
+    this.setState({name: 'chidi'})
+  }
   
   render() {
     return (
@@ -15,7 +24,7 @@ class App extends Component {
         <section className="User__info">
           <p>
             {" "}
-            <span className="faint">I am</span> a {store.getState().description}
+            <span className="faint">I am</span> a {store.getState().description} {this.state.name}
           </p>
           <p>
             {" "}
